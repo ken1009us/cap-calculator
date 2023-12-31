@@ -14,10 +14,10 @@
 	        <h3>Dedicated to the Employees of Physiq...</h3>
 	        <h3>Let's Calculate!</h3>
             <form action="{{ url_for('predict')}}"method="post">
-                <input type="text" name="a" placeholder="Enter the sprint days" required="required" />
-                <input type="text" name="b" placeholder="Enter the working hours per day" required="required" />
-                <input type="text" name="c" placeholder="Enter the meeting hours" required="required" />
-                <input type="text" name="d" placeholder="Enter the PTO hours" required="required" />
+                <input type="text" name="sprint_days" placeholder="Enter the sprint days" required="required" />
+                <input type="text" name="hours_per_day" placeholder="Enter the working hours per day" required="required" />
+                <input type="text" name="meeting_hours" placeholder="Enter the meeting hours" required="required" />
+                <input type="text" name="pto_hours" placeholder="Enter the PTO hours" required="required" />
                 <button type="submit" class="btn btn-primary btn-block btn-large">Calculate</button>
             </form>
 
