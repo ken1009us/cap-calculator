@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
-from calculator import calculation
+from calculator import calculate_capacity
+
 
 # Create the app object
 app = Flask(
@@ -14,19 +15,24 @@ app = Flask(
 # Define calculator
 @app.route("/")
 def home():
+    """
+    Render the homepage with the capacity calculator form.
+    """
     return render_template("index.html")
 
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    sprintDays = request.form["a"]
-    hoursPerDay = request.form["b"]
-    meetingHours = request.form["c"]
-    ptoHours = request.form["d"]
+    """
+    Handle the capacity calculation request and display the result.
+    """
+    sprint_days = request.form["sprint_days"]
+    hours_per_day = request.form["hours_per_day"]
+    meeting_hours = request.form["meeting_hours"]
+    pto_hours = request.form["pto_hours"]
 
-    res = calculation(sprintDays, hoursPerDay, meetingHours, ptoHours)
-
-    return render_template("index.html", prediction_text=res)
+    result = calculate_capacity(sprint_days, hours_per_day, meeting_hours, pto_hours)
+    return render_template("index.html", prediction_text=result)
 
 
 if __name__ == "__main__":
