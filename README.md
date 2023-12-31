@@ -4,6 +4,8 @@
 
 ## Overview
 
+Link: [Capacity Calculator](https://ken1009.pythonanywhere.com/)
+
 This Capacity Calculator is a web-based tool dedicated to the employees of Physiq. It is designed to efficiently calculate the available working hours considering various factors like sprint days, daily working hours, meeting hours, and PTO hours. The calculator is built using Flask, a lightweight web application framework in Python.
 
 ## Features
